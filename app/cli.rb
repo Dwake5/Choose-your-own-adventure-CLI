@@ -70,11 +70,11 @@ class CLI
         ]
       },
       {
-        id: 7,
-        description: 'You sit down in the cool group, they continue to laugh and joke along with you, you waste a few hours screwing around, but make some friends. You hear labs are coming up soon, do you want a coffe first?',
+        id: 10,
+        description: "Rewarding yourself with a nice lunch after all of those labs, youve been invited to mediatate or play the campus game Cambio",
         choices: [
-          { choice: 8, text: 'Coffee, coffee, coffee!'},
-          { choice: 9, text: 'Straight to the labs'},
+          { choice: 11, text: 'Meditate'},
+          { choice: 12, text: 'Ill try out cambio'},
         ]
       },
     ]
