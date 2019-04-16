@@ -74,7 +74,94 @@ class CLI
         description: "Rewarding yourself with a nice lunch after all of those labs, youve been invited to mediatate or play the campus game Cambio",
         choices: [
           { choice: 11, text: 'Meditate'},
-          { choice: 12, text: 'Ill try out cambio'},
+          { choice: 11, text: 'Ill try out cambio'},
+        ]
+      },
+      {
+        id: 11,
+        description: "After you're done you head home and rest",
+        choices: [
+          { choice: 12, text: 'start of day 2 here'},
+          { choice: 13, text: 'start of day 2 here'},
+        ]
+      },
+      { #Start day 3
+        id: 0,
+        description: "You wake up in a dream like state, you didnt sleep well. You make your way to the station"
+        choices: [
+          { choice: 2, text: 'Hit snooze.'},
+          { choice: 3, text: 'Get up.'},
+        ],
+      },
+      {
+        id: 2,
+        description: "",
+        choices: [
+          { choice: 5, text: 'Take the train.'},
+          { choice: 5, text: 'Cycle.'},
+          { choice: 5, text: 'Run.'},
+        ],
+      },
+      {
+        id: 3,
+        description: "ol?",
+        choices: [
+          { choice: 5, text: 'Walk'},
+          { choice: 5, text: 'Get the tube.'},
+        ]
+      },
+      {
+        id: 5,
+        description: 'jh?',
+        choices: [
+          { choice: 6, text: 'The nerds?'},
+          { choice: 7, text: 'The cool group!'},
+        ]
+      },
+      {
+        id: 6,
+        description: 'hst?',
+        choices: [
+          { choice: 8, text: 'Coffee, coffee, coffee!'},
+          { choice: 9, text: 'Straight to the labs'},
+        ]
+      },
+      {
+        id: 7,
+        description: 'hrst?',
+        choices: [
+          { choice: 8, text: 'Coffee, coffee, coffee!'},
+          { choice: 9, text: 'Straight to the labs'},
+        ]
+      },
+      {
+        id: 8,
+        description: "hhh",
+        choices: [
+          { choice: 9, text: 'Take on the labs!'},
+        ]
+      },
+      {
+        id: 9, #Kind of plain without a battle encounter
+        description: "ii",
+        choices: [
+          { choice: 10, text: 'You move onto lunch'},
+        ]
+      },
+      {
+        id: 10,
+        description: "h",
+        choices: [
+          { choice: 11, text: 'Meditate'},
+          { choice: 11, text: 'Ill try out cambio'},
+        ]
+      },
+      {
+        id: 11,
+        description: "h",
+        choices: [
+          { choice: 12, text: 'start of day 2 here'},
+          { choice: 13, text: 'start of day 2 here'},
         ]
       },
     ]
