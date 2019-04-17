@@ -11,15 +11,14 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
 
   def user_setup(name)
     @user = User.create(name: name)
-    @energy = 10
     @story = [
 { #Start day 1
 id: 1,
 description: "Good morning #{@user.name}. You've just woken up for your first day at Flatiron School.
               Do you want to get up early and have a healthy breakfest or go back to sleep?",
 choices: [
-  { choice: 2, text: 'Hit snooze.', effect: {energy: -10} },
-  { choice: 3, text: 'Get up.'},
+  { choice: 2, text: 'Hit snooze.', effects: {stress: 10, knowledge: 10, energy: -10}},
+  { choice: 3, text: 'Get up.', effects: {stress: 1}},
 ],
 },
 {
@@ -44,8 +43,8 @@ id: 5,
 description: 'You arrive at school eager and ready to learn. You notice that everyone else is already seated.
               Looking around people have split into two distinct groups, who do you want to sit with and be stuck with til the end of time?',
 choices: [
-  { choice: 6, text: 'The nerds?'},
-  { choice: 7, text: 'The cool group!'},
+  { choice: 6, text: 'The nerds?', effects: {stress: 10, knowledge: 10, energy: -100}},
+  { choice: 7, text: 'The cool group!', effects: {stress: 10, knowledge: 10, energy: -100}},
 ],
 },
 {
@@ -469,7 +468,7 @@ choices: [
 id: 153,
 description: "Lecture scenario A When the time comes, you feel at ease during the lecture and are happily asking questions and moving along",
 choices: [
-  { choice: 156, text: 'continue'},
+  { choice: 200, text: 'Onto day 5'},
 ],
 },
 {
@@ -477,21 +476,228 @@ id: 154,
 description: "Lecture scenario B You sit down for the lecture and from the first moment you struggle to follow the logic, you don't even know where to begin with asking questions.
   The others seem to be engaging and you feel overwhelmed",
 choices: [
-  { choice: 156, text: 'continue'},
+  { choice: 200, text: 'Onto day 5'},
 ],
 },
 {
 id: 155,
 description: "Lecture scenario C You only just make it to the lecture, clutching your barista coffee. Nico might as well be speaking a different language.",
 choices: [
-  { choice: 156, text: 'continue'},
+  { choice: 200, text: 'Onto day 5'},
 ],
 },
 {
-id: 300,
-description: "input end of game text here",
+id: 200,
+description: "Well, the day has come, you have passed all the code challenges,
+              impressed the teachers and proven yourself to be a true programmer.
+              And now for the final challenge, THE JOB HUNT! You will go through
+              and interview involving a code challenge and a personality test but
+              dont worry, you got this!",
 choices: [
-  { choice: 156, text: 'End of game'},
+  { choice: 201, text: 'Eye of the Tiger!'},
+  { choice: 201, text: 'Im open to any opportunity that comes my way!'},
+  { choice: 201, text: 'Oh man! This is the moment of truth. What if I dont find
+                        a job? What if Im not good enough? What if I fail all the
+                        code challenges? What if the aliens invade...'},
+],
+},
+{
+id: 201,
+description: "Ok its time to start he search. Lets try out a few job search platforms.",
+choices: [
+  { choice: 202, text: 'Linkedin, what else.'},
+  { choice: 203, text: 'Actaully, escape the city is pretty cool, make sure Im safe
+                        from the big corporate monsters.'},
+  { choice: 204, text: 'Im gonna hit them all and shower my CV all over London, hell,
+                        the whole world!'},
+],
+},
+{
+id: 202,
+description: "Ok, well thats very network heavy so maybe send a few DMs and arrange
+              coffee dates?",
+choices: [
+  { choice: 209, text: 'Nah, I think Ill just apply to the job postings...and send
+                        follow up DMs.'},
+  { choice: 209, text: 'I hate networking but ok.'},
+],
+},
+{
+id: 203,
+description: "That sounds great! A little hipster, but great!
+              And look, a few postings already! You can apply to both but lets focus
+              on one for now.",
+choices: [
+  { choice: 205, text: 'Web Developer at a food start up selling Japanese Macha products.'},
+  { choice: 206, text: 'Full stack developer at an animals welfare charity.'},
+  { choice: 207, text: 'Swift developer for IOS app at a sustainable fashion startup.'},
+],
+},
+{
+id: 204,
+description: "Woah Nelly! Now we both know that is no way to go about the job hunt.
+              You have to be more specific and focused. When your attention is all
+              pointing in one direction, you come across as a stronger candidates
+              to employers. So pick a sector and focus your applications towards
+              companies that fit the description.",
+choices: [
+  { choice: 208, text: 'But what if I dont know what industry I want to go into?'},
+  { choice: 209, text: 'Hmmmm ok. Ill have a think about it.'},
+],
+},
+{
+id: 205,
+description: "Let me guess, based in Notting Hill?",
+choices: [
+  { choice: 209, text: 'How did you guess!'},
+],
+},
+{
+id: 206,
+description: "That's a great one! Two birds with one stone, a stisfying career and a happy soul.",
+choices: [
+  { choice: 209, text: 'Interesting choice of expression...but yes, youre right.'},
+],
+},
+{
+id: 207,
+description: "Hmmm, now that might be a little above your skill set but you should always
+              apply, you have nothing to loose.",
+choices: [
+  { choice: 209, text: 'Well, thanks to Flatiron, I can teech myself any language! (cheese alert)'},
+],
+},
+{
+id: 208,
+description: "Ok well, lets take a look at a few options:",
+choices: [
+  { choice: 209, text: 'Tech'},
+  { choice: 209, text: 'Food'},
+  { choice: 209, text: 'Fashion'},
+  { choice: 209, text: 'Media'},
+  { choice: 209, text: 'Health and fitness'},
+  { choice: 209, text: 'Banking'},
+  { choice: 209, text: 'Life Style'},
+  { choice: 209, text: 'Charity'},
+],
+},
+{
+id: 209,
+description: "Ok, so youve set up an interview. Now listen, the less you want this the cooler and calmer
+              youll come across as a desirable candidate. So try to forget about how much
+              is riding on this. Dont think abou how much you need the money to pay the rent.
+              And definetaley do not think about the fact that youve only been coding for
+              fifteen weeks. Get all of that down and youll be juuust fine!",
+choices: [
+  { choice: 210, text: 'Oh shut up. Im gonna kill it!'},
+  { choice: 350, text: 'Right. Im out.'}, GAME OVER
+],
+},
+{
+id: 210,
+description: "First, the Code Challenge:
+              Its your first year at Hogwarts and youre having a tough time getting
+              the hang of that levitation spell. Fill out the content of the method
+              looping to contain a loop that puts the levitation charm 'Wingardium Leviosa'
+              an infinite number of times.",
+choices: [
+  { choice: 211, text: 'def looping
+                          return "Wingardium Leviosa"
+                        end'},
+  { choice: 212, text: 'def looping
+                          puts "Wingardium Leviosa"
+                        end'},
+  { choice: 211, text: 'def looping
+                          puts "wingardium leviosa"
+                        end'},
+],
+},
+{
+id: 211,
+description: "Dude, no...Im sorry. Its a fail Im affraid.",
+choices: [
+  { choice: 350, text: ''}, GAME OVER
+],
+},
+{
+id: 212,
+description: "DING DING DING! You are through to round two. The Personality Test.",
+choices: [
+  { choice: 171, text: 'YES!! Killed it!'},
+],
+},
+{
+id: 213,
+description: "Personality Test Question 1:
+              You have been stuck on a line of code or a bug for a couple of hours
+              and there doesnt seem to be a way out, what do you do?",
+choices: [
+  { choice: 214, text: 'Ask a colleague for help.'},
+  { choice: 214, text: 'Ask your superior.'},
+  { choice: 214, text: 'Keep Googling, where theres a will, theres a way.'},
+],
+},
+{
+id: 214,
+description: "Personality Test Question 2:
+              Its pub quiz and pizza night! The rule is, each person gets one slice
+              but it seems to be getting quiet and the bpx is sitting there, unattended.
+              Do you take a second slice?",
+choices: [
+  { choice: 215, text: 'Why not? No one is looking.'},
+  { choice: 215, text: 'I would ask if anyone wants it.'},
+  { choice: 215, text: 'Never. Rules are made to be obayed.'},
+],
+},
+{
+id: 215,
+description: "Personality Test Question 2:
+              A charity collection takes place in your office. For every UK£10.00 given,
+              a blind person's sight is restored. Instead of donating UK£10.00, you use
+              the money to treat yourself to a cocktail after work. Are you morally responsible
+              for the continued blindness of the person who would have been treated had you made the donation?",
+choices: [
+  { choice: 216, text: 'Hell no!'},
+  { choice: 216, text: 'I would never have that cocktail though...of course I would donate the money.'},
+  { choice: 216, text: 'Yes you are. It was in your hand to save them and you didnt for a trivial persuit.'},
+],
+},
+{
+id: 216,
+description: "You have passed, both, the Code Challenge and the Personality Test.
+              Congratulations, you have got the job! You are about to start the
+              next chapter of your life as a software engineer. How does it feel,
+              knowing you did this all yourself? All the hard work, late nights and self-doubt?",
+choices: [
+  { choice: 351, text: 'I am speechless.'},
+  { choice: 351, text: 'I would like ot thank everyone at Flatiron,teachers, TCFs and students. I couldnt
+                        have done it without them.'},
+  { choice: 351, text: 'Awesome!'},
+id: 300,
+description: "You are banished to the online course",
+choices: [
+  { choice: 157, text: 'YOU HAVE LOST!'},
+],
+},
+{
+id: 350,
+description: "You failed to find a job as a programmer :o",
+choices: [
+  { choice: 157, text: 'YOU HAVE LOST!'},
+],
+},
+{
+id: 351,
+description: "You have secured a job as a software engineer. Life goals complete, endless riches will soon be yours",
+choices: [
+  { choice: 157, text: 'Ultimate win!'},
+],
+},
+{
+id: 400,
+description: "You've run out of energy, you collapse to the floor and die :( ",
+choices: [
+  { choice: 157, text: 'YOU HAVE LOST! PRESS ENTER TO START NEW GAME!'},
 ],
 },
 ]
@@ -499,8 +705,15 @@ choices: [
   end
 
   def create_user
+    puts "NEW GAME"
+    puts "Welcome to Flatiron Simulator, Extreme Edition:"
     name = @prompt.ask("What's your name?")
-    user_setup(name)
+    if name == nil
+      puts "Please enter a valid name to continue"
+      create_user
+    else
+      user_setup(name)
+    end
   end
 
   # def choose_scenario
@@ -513,7 +726,12 @@ choices: [
   # end
 
   def display_current_scenario
+    if @user.energy <= 0
+     @current_scenario = @story.last
+     binding.pry
+    end
     puts "                              "
+    puts "Your current stats are #{@user.knowledge} knowledge, #{@user.stress} stress and #{@user.energy} energy "
     puts @current_scenario[:description]
 
     # puts @current_scenario[:choices],
@@ -522,16 +740,23 @@ choices: [
         menu.choice name: choice[:text], value: choice
       end
     end
-    if choice[:choice] != 156
+
+    effects = choice[:effects]
+    if effects
+      effects.each do |key, value|
+        @user[key] += value
+      end
+    end
+
+
+    if choice[:choice] != 156 && choice[:choice] != 157
       next_scenario_id = choice[:choice]
     else
       run
     end
 
-    # effects = choice[:effects]
-    # effects.each do |key, value|
-    #   @user.key += value
-    #  end
+
+
     # apply these effects to the @user
 
     @current_scenario = @story.find { |scenario| scenario[:id] == next_scenario_id }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_164249) do
+ActiveRecord::Schema.define(version: 2019_04_17_102429) do
 
   create_table "adventures", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,11 @@ ActiveRecord::Schema.define(version: 2019_04_15_164249) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "energy"
+    t.integer "stress", default: 0
+    t.integer "energy", default: 100
+    t.integer "knowledge", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
