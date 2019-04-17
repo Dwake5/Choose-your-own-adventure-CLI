@@ -503,10 +503,14 @@ choices: [
     user_setup(name)
   end
 
-  def choose_scenario
-    choice = @prompt.select("What would you like to do?:")
-    @current_scenario = story.find { |scenario| scenario[:id] == choice }
-  end
+  # def choose_scenario
+  #   choice = @prompt.select("What would you like to do?:")
+  #   if @current_scenario[:choice] == 156
+  #     puts "Spongebob"
+  #   else
+  #     @current_scenario = story.find { |scenario| scenario[:id] == choice }
+  #   end
+  # end
 
   def display_current_scenario
     puts "                              "
@@ -518,7 +522,12 @@ choices: [
         menu.choice name: choice[:text], value: choice
       end
     end
-    next_scenario_id = choice[:choice]
+    if choice[:choice] != 156
+      next_scenario_id = choice[:choice]
+    else
+      run
+    end
+
     # effects = choice[:effects]
     # effects.each do |key, value|
     #   @user.key += value
