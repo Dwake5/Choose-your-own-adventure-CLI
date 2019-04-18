@@ -663,9 +663,12 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   def create_user
     pastel = Pastel.new
     titlefont = TTY::Font.new(:doom)
+    puts pastel.red(titlefont.write("Flatiron Simulator"))
+    puts pastel.red(titlefont.write("Extreme Edition"))
     puts pastel.red(titlefont.write("NEW GAME"))
     puts Rainbow("Welcome to Flatiron Simulator, Extreme Edition:").color(:mediumslateblue).bright
     name = @prompt.ask("What's your name?")
+
     if name == nil
       puts "Please enter a valid name to continue"
       create_user
@@ -683,9 +686,11 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
       @user.save
       return "GG"
     end
+
     # if @current_scenario == @story.find { |scenario| scenario[:id] == 5 } && @user.knowledge <= 50
     #   @current_scenario = @story.find { |scenario| scenario[:id] == 360}
     # end
+
     puts "                              "
     puts "Your current stats are " + Rainbow("#{@user.knowledge} knowledge").color(:deepskyblue) + ", " + Rainbow("#{@user.stress} stress").color(:webmaroon).bright + " and" + Rainbow(" #{@user.energy} energy ").color(:greenyellow)
     puts @current_scenario[:description]
