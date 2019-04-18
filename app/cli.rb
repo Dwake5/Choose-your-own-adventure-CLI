@@ -129,7 +129,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   ],
   },
   {
-  id: 51,
+  id: 51, #Start day 2
   description: "OH SHIT! It's 7.30! You're late!!",
   choices: [
     { choice: 53, text: 'Run Forrest, run!', effects: {stress: 50, energy: -85}},
@@ -226,7 +226,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   },
   {
   id: 63,
-  description: "You grab the handle but its locked and theres currents of electricity bolting around the your hand.",
+  description: "You grab the handle but it's locked and theres currents of electricity bolting around the your hand.",
   choices: [
     { choice: 64, text: 'Pull harder! I HAVE TO KNOW WHATS INSIDE!', effects: {stress: 50, energy: -50}},
     { choice: 65, text: 'IM COMING TO SAVE YOU LUCY!!', effects: {stress: 50, energy: -50}},
@@ -287,7 +287,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   },
   {
   id: 69,
-  description: "GLING! The screen begins to glow and you hear the voice say, 'You have passed the code challenge. Lucy awaits on the otherside.'. Suddenly, you begin to fall again utnil you drop back into the pod, excpet this time its empty and calm. The lights are on and your laptop is infront of you. You then hear Lucy call you.",
+  description: "GLING! The screen begins to glow and you hear the voice say, 'You have passed the code challenge. Lucy awaits on the otherside.'. Suddenly, you begin to fall again until you drop back into the pod, excpet this time it's empty and calm. The lights are on and your laptop is infront of you. You then hear Lucy call you.",
   choices: [
     { choice: 71, text: " 'I'm coming!!' ", effects: {stress: -100, knowledge: 100, energy: -50}},
     { choice: 72, text: "I am exhausted. I'm off. Ciao!", effects: {stress: -100, knowledge: 100, energy: 50}},
@@ -363,7 +363,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   },
   {
   id: 106,
-  description: "You Google the question, there isnt much help on here. You even go to the baren wastelands of page 2 of Google. Nothing. Now what?",
+  description: "You Google the question, there isn't much help on here. You even go to the baren wastelands of page 2 of Google. Nothing. Now what?",
   choices: [
     { choice: 108 , text: 'Stack Overflow.', effects: {knowledge: 50, energy: -30}},
     { choice: 107 , text: 'Ask a TCF.', effects: {knowledge: 35, energy: -20}},
@@ -679,7 +679,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
      @user.save
      @current_scenario = @story.last
     end
-    if @current_scenario == @story.find { |scenario| scenario[:id] == 157 || scenario[:id] == 170 }
+    if @current_scenario == @story.find { |scenario| scenario[:id] == ( 157 || 170 )}
       @user.save
       return "GG"
     end
