@@ -15,7 +15,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
 { #Start day 1
   id: 1,
   description: "This is a 5 day ultra-realistic simulation of a totally typical time at Flatiron School. Try to make it to the end and get a sweet ass job, whilst gaining
-                enough knowledge to defeat the dastardly Code Challenges. Make sure you keep an eye on your energy, if you let it drop below 0 you will die... of Death. 
+                enough knowledge to defeat the dastardly Code Challenges. Make sure you keep an eye on your energy, if you let it drop below 0 you will die... of Death.
 
                 Good morning #{@user.name}. You've just woken up for your first day at Flatiron School.
                 Do you want to get up early and have a healthy breakfest or go back to sleep?",
@@ -29,8 +29,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "You hit snooze a few too many times, and now need to rush into class.",
   choices: [
     { choice: 5, text: 'Take the train.', effects: {stress: 30, energy: 10}},
-    { choice: 5, text: 'Cycle.', effects: {stress: -10, energy: -50}},
-    { choice: 5, text: 'Run.', effects: {stress: -95, energy: -80}},
+    { choice: 5, text: 'Cycle.', effects: {stress: -10, energy: -30}},
+    { choice: 5, text: 'Run.', effects: {stress: -95, energy: -50}},
   ],
   },
   {
@@ -48,7 +48,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                 else is already seated. Looking around, people have split into two distinct groups,
                 who do you want to sit with and be stuck with til the end of time?',
   choices: [
-    { choice: 6, text: 'The nerds?', effects: {stress: 10, knowledge: 10, energy: -10}},
+    { choice: 6, text: 'The nerds?', effects: {stress: 10, knowledge: 4
+      0, energy: -10}},
     { choice: 7, text: 'The cool group!', effects: {stress: 10, knowledge: 10, energy: -30}},
   ],
   },
@@ -57,8 +58,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: 'You sit with the nerds (You look like you fit right in), you mingle a bit and get straight to work.
                 You hear labs are coming up soon, do you want a coffee first?',
   choices: [
-    { choice: 8, text: 'Coffee, coffee, coffee!', effects: {stress: 25, energy: 100}},
-    { choice: 9, text: 'Straight to the labs!', effects: {stress: 50, knowledge: 45, energy: -80}},
+    { choice: 9, text: 'Straight to the labs!', effects: {stress: 50, knowledge: 45, energy: -50}},
+    { choice: 8, text: 'Coffee, coffee, coffee!', effects: {stress: 25, energy: 60}},
   ],
   },
   {
@@ -67,8 +68,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                 screwing around, but make some friends.
                 You hear labs are coming up soon, do you want a coffee first?',
   choices: [
-    { choice: 8, text: 'Coffee, coffee, coffee!', effects: {stress: 25, energy: 100}},
-    { choice: 9, text: 'Straight to the labs!', effects: {stress: 50, knowledge: 45, energy: -80}},
+    { choice: 8, text: 'Coffee, coffee, coffee!', effects: {stress: 25, energy: 60}},
+    { choice: 9, text: 'Straight to the labs!', effects: {stress: 50, knowledge: 45, energy: -50}},
   ],
   },
   {
@@ -92,24 +93,24 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "Rewarding yourself with a nice lunch after all of those labs,
                 you've been invited to mediatate or play the campus game, Cambio",
   choices: [
-    { choice: 11, text: 'Meditate.', effects: {stress: -100, knowledge: 50, energy: 100}},
-    { choice: 11, text: "I'll try out cambio!", effects: {stress: -45, knowledge: 10, energy: -5}},
+    { choice: 11, text: 'Meditate.', effects: {stress: -100, knowledge: 50, energy: 50}},
+    { choice: 11, text: "I'll try out cambio!", effects: {stress: -45, knowledge: 10, energy: -15}},
   ],
   },
   {
   id: 11,
   description: "After you're done, you head home and rest.",
   choices: [
-    { choice: 51, text: 'On to day 2.'},
+    { choice: 51, text: 'On to day 2.', effects: {energy: 40}},
   ],
   },
   {
   id: 51,
   description: "OH SHIT! It's 7.30! You're late!!",
   choices: [
-    { choice: 52, text: 'Oh what the hell. Its too late anyway. Might as well relax
-                         and have a boiled egg.', effects: {stress: -10, energy: 30}},
     { choice: 53, text: 'Run Forrest, run!', effects: {stress: 50, energy: -85}},
+    { choice: 52, text: "Oh what the hell. It's too late anyway. Might as well relax
+                         and have a boiled egg.", effects: {stress: -10, energy: 30}},
   ],
   },
   {
@@ -118,8 +119,9 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                 speed he goes, you've probably missed a hell of a lot of knowledge.",
   choices: [
     { choice: 54, text: 'I can totally sneak in unnoticed...', effects: {stress: 15}},
-    { choice: 55, text: 'Its too late now. Im going for the buscuit jar.', effects: {stress: -20, knowledge: -65, energy: 20}},
+    { choice: 55, text: "It's too late now. I'm going for the buscuit jar.", effects: {stress: -20, knowledge: -10, energy: 20}},
   ],
+
   },
   {
   id: 53,
@@ -127,7 +129,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   choices: [
     { choice: 56, text: 'I think WeWork has showers. I can take a quick shower and
                         head to the lecture.', effects: {stress: -70, energy: 70}},
-    { choice: 57, text: 'I dont smell anything...'},
+    { choice: 57, text: "I don't smell anything..."},
   ],
   },
   {
@@ -144,25 +146,25 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "Ok silliness aside, remember you're here on your own accord so
                 lets get serious.",
   choices: [
-    { choice: 58, text: 'Yes, youre right. Ill catch up on the last 100 labs.', effects: {stress: 50, knowledge: 95, energy: -80}},
-    { choice: 58, text: 'Get off my case Mom!', effects: {stress: 50, knowledge: -50}},
+    { choice: 58, text: "Yes, you're right. Ill catch up on the last 100 labs.", effects: {stress: 50, knowledge: 95, energy: -80}},
+    { choice: 58, text: 'Get off my case Mom!', effects: {stress: 50, knowledge: -10}},
   ],
   },
   {
   id: 56,
   description: 'Lecture over, knowledge emparted. Can you feel the power? ',
   choices: [
-    { choice: 58, text: 'Yes! But now Im starving, time for lunch!', effects: {stress: -50, energy: 80}},
-    { choice: 58, text: 'I think Ill catch up on some labs.', effects: {stress: 70, knowledge: 100, energy: -95}},
+    { choice: 58, text: "Yes! But now I'm starving, time for lunch!", effects: {stress: -50, energy: 80}},
+    { choice: 58, text: "I think I'll catch up on some labs.", effects: {stress: 70, knowledge: 100, energy: -75}},
   ],
   },
   {
   id: 57,
   description: "Remember the talk we had on feedback? Well, there's a few angry
                 faces around your desk today. Everyones gets together and holds an
-                intervention, 'Dude, you smell bad...sorry!''.",
+                intervention, 'Dude, you smell bad...sorry!",
   choices: [
-    { choice: 72, text: 'I cant bare the shame. Im going home.'}, effects: {stress: 100, knowledge: -100, energy: -100},
+    { choice: 72, text: "I can't bare the shame. I'm going home."}, effects: {stress: 100, knowledge: -10, energy: -100},
   ],
   },
   {
@@ -170,33 +172,33 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "Lucy has Slacked everyone to remind you that you are presenting
                 your first blog post tomorrow, have you done it or even thought about it?",
   choices: [
-    { choice: 59, text: 'Ummm, Im kinda stuck on ideas. Im gonna go look for Lucy.'},
-    { choice: 60, text: 'Actually I have a great idea! Im gonna get working on that now.'},
+    { choice: 59, text: "Ummm, I'm kinda stuck on ideas. I'm gonna go look for Lucy.", effects: {energy: -20}},
+    { choice: 60, text: "Actually I have a great idea! I'm gonna get working on that now.", effects: {energy: -20}},
   ],
   },
   {
   id: 59,
-  description: "You go on a quest in search of Lucy, she hasnt been seen in a while...",
+  description: "You go on a quest in search of Lucy, she hasn't been seen in a while...",
   choices: [
     { choice: 61, text: 'I think I saw her going towards the pods.'},
   ],
   },
   {
   id: 60,
-  description: "Great, so you get working on that, and dont forget, when it comes
+  description: "Great, so you get working on that, and don't forget, when it comes
                 to memes, more is more!",
   choices: [
-    { choice: 59, text: 'Ok shhhh , youre disracting me!'},
+    { choice: 59, text: "Ok shhhh , you're disracting me!"},
   ],
   },
   {
   id: 61,
   description: "You look inside the pods but all the doors are open and no ones
                 inside, excpet....the one at the back seems to be glowing and the
-                door is closed.",
+                door is closed...",
   choices: [
-    { choice: 62, text: 'Woah...Im kinda scared but lets check it out.', effects: {stress: 45}},
-    { choice: 62, text: 'Oh heell no! Ill just wait here, uh, till shes done...I guess.', effects: {stress: -20}},
+    { choice: 62, text: "Woah...I'm kinda scared but lets check it out.", effects: {stress: 45}},
+    { choice: 62, text: "Oh heell no! I'll just wait here, uh, till shes done...I guess.", effects: {stress: -20}},
   ],
   },
   {
@@ -241,8 +243,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                 glowing code. A voice declares, 'This, is your first code challenge.
                 Should you wish to accept, you will be asked to solve one of two questions:'",
   choices: [
-    { choice: 67, text: 'Say Hello to the world.', effects: {stress: 95, knowledge: -95}},
-    { choice: 68, text: 'What is the meaning of life?', effects: {stress: 95, energy: -95}},
+    { choice: 67, text: 'Say Hello to the world.', effects: {stress: 95, knowledge: -10}},
+    { choice: 68, text: 'What is the meaning of life?', effects: {stress: 95, energy: -10}},
   ],
   },
   {
@@ -266,7 +268,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                             if meaning === love && me === single
                               puts "Lonelyyy, I am so lonelyyy."
                             elsif
-                              puts "Im killin it!"
+                              puts "I am killin it!"
                             else
                               self.end_it_all
                          end'},
@@ -284,14 +286,14 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                 excpet this time its empty and calm. The lights are on and your
                 laptop is infront of you. You then hear Lucy call you.",
   choices: [
-    { choice: 71, text: '"Im coming!!"', effects: {stress: -100, knowledge: 100, energy: -50}},
-    { choice: 72, text: 'I am exhausted. Im off. Ciao!', effects: {stress: -100, knowledge: 100, energy: 50}},
+    { choice: 71, text: " 'I'm coming!!' ", effects: {stress: -100, knowledge: 100, energy: -50}},
+    { choice: 72, text: "I am exhausted. I'm off. Ciao!", effects: {stress: -100, knowledge: 100, energy: 50}},
   ],
   },
   {
   id: 70,
   description: "Oh MAN! What have you done! The screen is now glowing red and the
-                voice sounds angry, 'FOOL! You have failed. I hereby banish you to
+                voice sounds angry, 'FOOL! You have failed.  I hereby banish you to
                 the online bootcamp!'. ",
   choices: [
     { choice: 170, text: 'Quit app'},
@@ -303,7 +305,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                 do you want to do for the rest of your evening?",
   choices: [
     { choice: 72, text: "I think I'll work on the blog and head home.", effects: {stress: 45, knowledge: 80, energy: -70}},
-    { choice: 72, text: "I think I'll head home. Im gonna have some crazy ass dreams tonight!", effects: {stress: -45, knowledge: -20, energy: 70}},
+    { choice: 72, text: "I think I'll head home. Im gonna have some crazy ass dreams tonight!", effects: {stress: -45, knowledge: -10, energy: 70}},
   ],
   },
   {
@@ -319,7 +321,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "You wake up refreshed and head into school. You eagerly get to work,
                 its going smoothly. You notice someone keeps playing youtube videos out loud. How do you want to adress this?",
   choices: [
-    { choice: 101, text: 'Ignore them.', effects: {stress: 45, knowledge: -30, energy: -10}},
+    { choice: 101, text: 'Ignore them.', effects: {stress: 45, knowledge: -10, energy: -10}},
     { choice: 102, text: 'Give them feedback.', effects: {stress: -45, knowledge: 20, energy: -20}},
   ],
   },
@@ -327,7 +329,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   id: 101,
   description: "They continue to be obnoxious and annoying. Disrupting everyone. Maybe you should have given feedback",
   choices: [
-    { choice: 105, text: "Nah, it's better to leave it.", effects: {stress: 10, knowledge: -20, energy: -10}}, #a suggestion for this message : 'Nah, its better to leave it.'.
+    { choice: 105, text: "Nah, it's better to leave it.", effects: {stress: 10, knowledge: -10, energy: -10}},
   ],
   },
   {
@@ -350,24 +352,24 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   id: 104,
   description: "You keep your cool and explain rationally, eventually they get the point.",
   choices: [
-    { choice: 105, text: 'And that, my friend, is how its done.', effects: {stress: -20, knowledge: 20, energy: -10}},
+    { choice: 105, text: "And that, my friend, is how it's done.", effects: {stress: -20, knowledge: 20, energy: -10}},
   ],
   },
   {
   id: 105,
   description: "They've finally stopped and you get back to work. You get to a lab on ActiveRecord and get stuck. Which resource do you use to solve this?",
   choices: [
-    { choice: 106, text: "Google the issue.", effects: {stress: 35, knowledge: 65, energy: -70}},
+    { choice: 106, text: "Google the issue.", effects: {stress: 35, knowledge: 65, energy: -50}},
     { choice: 107, text: "Ask a TCF for help and guidance.", effects: {stress: -35, knowledge: 50, energy: -20}},
-    { choice: 108, text: "Search Stack Overflow."},
+    { choice: 108, text: "Search Stack Overflow.", effects: {stress: 35, knowledge: 45, energy: -50}},
   ],
   },
   {
   id: 106,
   description: "You Google the question, there isnt much help on here. You even go to the baren wastelands of page 2 of Google. Nothing. Now what?",
   choices: [
-    { choice: 108 , text: 'Stack Overflow.', effects: {knowledge: 50}},
-    { choice: 107 , text: 'Ask a TCF.', effects: {knowledge: 35}},
+    { choice: 108 , text: 'Stack Overflow.', effects: {knowledge: 50, energy: -30}},
+    { choice: 107 , text: 'Ask a TCF.', effects: {knowledge: 35, energy: -20}},
   ],
   },
   {
@@ -382,17 +384,17 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "You search around Stack Overflow, you notice other people have asked the question,
                 got no reply and then edited 'Problem solved' without saying how, typical! What do you do now?",
   choices: [
-    { choice: 106, text: 'Google it.', effects: {stress: 35, knowledge: 65, energy: -70}},
+    { choice: 106, text: 'Google it.', effects: {stress: 35, knowledge: 65, energy: -30}},
     { choice: 107, text: 'Ask a TCF.', effects: {stress: -35, knowledge: 50, energy: -20}},
   ],
   },
   {
   id: 109,
-  description: "You continue to study throughout the day. Not noticing the time, its now 6:30 and youve been invited to get a beer downstairs.
+  description: "You continue to study throughout the day. Not noticing the time, its now 6:30 and you've been invited to get a beer downstairs.
                 Do you go and socialize, go home, or stay and work for another hour?",
   choices: [
-    { choice: 110, text: 'Beer obviously.', effects: {stress: -95, knowledge: -70, energy: 45}},
-    { choice: 111, text: 'Home time.', effects: {stress: -100, knowledge: -70, energy: 100}},
+    { choice: 110, text: 'Beer obviously.', effects: {stress: -95, knowledge: -30, energy: 45}},
+    { choice: 111, text: 'Home time.', effects: {stress: -100, knowledge: -10, energy: 100}},
     { choice: 112, text: "I'd rather work on my own.", effects: {stress: -95, knowledge: 95, energy: -80}},
   ],
   },
@@ -426,7 +428,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
                 at this point, and it would be unwise to stay for more. Stay for more drinks?",
   choices: [
     { choice: 114, text: 'Even more drinks.', effects: {stress: 20, knowledge: 90, energy: -95}},
-    { choice: 150, text: "Im good, I'll head home.", effects: {stress: -100, knowledge: -30, energy: 100}},
+    { choice: 150, text: "Im good, I'll head home.", effects: {stress: -100, knowledge: -10, energy: 100}},
   ],
   },
   {
@@ -450,7 +452,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "After unpacking your bag and quickly checking your slack & email, you see a message
                 from Ben informing you that there is breakfast in the lobby. Do you...?",
   choices: [
-    { choice: 151, text: 'Go down to the lobby with your friend.', effects: {stress: -45, knowledge: -20, energy: 35}},
+    { choice: 151, text: 'Go down to the lobby with your friend.', effects: {stress: -45, knowledge: -10, energy: 35}},
     { choice: 152, text: 'Start work.', effects: {stress: 20, knowledge: 20, energy: -20}}
   ],
   },
@@ -459,8 +461,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "You arrive in the Lobby to the sight of many little pots on the counter.
                 You take a pot of oats and a yoghurt and are about to turn towards the lifts when Laura asks if you want to get a coffee from the barista.",
   choices: [
-    { choice: 155, text: 'Stay for coffee with Laura.', effects: {stress: -20, knowledge: -20, energy: 50}},
-    { choice: 152, text: 'Head back upstairs with your breakfast.', effects: {stress: 20, knowledge: 20, energy: -20}}
+    { choice: 155, text: 'Stay for coffee with Laura.', effects: {stress: -20, knowledge: -10, energy: 50}},
+    { choice: 152, text: 'Head back upstairs with your breakfast.', effects: {stress: 20, knowledge: 20, energy: 10}}
   ],
   },
   {
@@ -474,24 +476,24 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   },
   {
   id: 153,
-  description: "Lecture scenario A : When the time comes, you feel at ease during the lecture and are happily asking questions and moving along.",
+  description: "When the time comes, you feel at ease during the lecture and are happily asking questions and moving along.",
   choices: [
-    { choice: 200, text: 'Onto day 5'},
+    { choice: 200, text: 'Onto day 5', effects: {energy: 50}},
   ],
   },
   {
   id: 154,
-  description: "Lecture scenario B : You sit down for the lecture and from the first moment you struggle to follow the logic, you don't even know where to begin with asking questions.
-                The others seem to be engaging and you feel overwhelmed.",
+  description: "You sit down for the lecture and from the first moment you struggle to follow the logic, you don't even know where to begin with asking questions.
+                The others seem to be engaging and you feel overwhelmed." , effects: {knowledge: 15},
   choices: [
-    { choice: 200, text: 'Onto day 5'},
+    { choice: 200, text: 'Onto day 5', effects: {energy: 50}},
   ],
   },
   {
   id: 155,
-  description: "Lecture scenario C : You only just make it to the lecture, clutching your barista coffee. Nico might as well be speaking a different language.",
+  description: "You only just make it to the lecture, clutching your barista coffee. Nico might as well be speaking a different language." , effects: {stress: 20, knowledge: 5, energy: -20},
   choices: [
-    { choice: 200, text: 'Onto day 5'},
+    { choice: 200, text: 'Onto day 5', effects: {energy: 50}},
   ],
   },
   {
@@ -591,14 +593,14 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   },
   {
   id: 209,
-  description: "Ok, so youve set up an interview. Now listen, the less you want this the cooler and calmer
+  description: "Ok, so you've set up an interview. Now listen, the less you want this the cooler and calmer
                 you'll come across as a desirable candidate. So try to forget about how much
                 is riding on this. Don't think abou how much you need the money to pay the rent.
                 And definitely do not think about the fact that you've only been coding for
                 fifteen weeks. Get all of that down and you'll be juuust fine!",
   choices: [
-    { choice: 210, text: 'Oh shut up. Im gonna kill it!', effects: {stress: -20, knowledge: 85, energy: -20}},
-    { choice: 350, text: 'Right. Im out.'},
+    { choice: 210, text: "Oh shut up. I'm gonna kill it!", effects: {stress: -20, knowledge: 85, energy: -20}},
+    { choice: 350, text: "Right. I'm out."},
   ],
   },
   {
@@ -622,7 +624,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   },
   {
   id: 211,
-  description: "Dude, no...Im sorry. Its a fail Im affraid.",
+  description: "Dude, no... I'm sorry. Its a fail Im affraid.",
   choices: [
     { choice: 170, text: 'Quit app'},
   ],
