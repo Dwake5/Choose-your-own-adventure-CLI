@@ -29,8 +29,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "You hit snooze a few too many times, and now need to rush into class.",
   choices: [
     { choice: 5, text: 'Take the train.', effects: {stress: 30, energy: 10}},
-    { choice: 5, text: 'Cycle.', effects: {stress: -10, energy: -30}},
-    { choice: 5, text: 'Run.', effects: {stress: -95, energy: -50}},
+    { choice: 5, text: 'Cycle.', effects: {stress: -10, energy: -20}},
+    { choice: 5, text: 'Run.', effects: {stress: -95, energy: -40}},
   ],
   },
   {
@@ -38,7 +38,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "You wake up nice and early, and enjoy a healthy breakfast! You've got some spare time. How are you getting to school?",
   choices: [
     { choice: 5, text: 'Walk.', effects: {stress: 50, energy: 10}},
-    { choice: 5, text: 'Get the tube.', effects: {stress: 50, energy: 10}},
+    { choice: 5, text: 'Get the tube.', effects: {stress: 50, energy: 20}},
   ],
   },
   {
@@ -61,38 +61,38 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   id: 7,
   description: 'You sit down with the cool kids, they continue to laugh and joke along with you, you waste a few hours screwing around, but make some friends. You hear labs are coming up soon, do you want a coffee first?',
   choices: [
-    { choice: 8, text: 'Coffee, coffee, coffee!', effects: {stress: 25, energy: 60}},
-    { choice: 9, text: 'Straight to the labs!', effects: {stress: 50, knowledge: 45, energy: -50}},
+    { choice: 8, text: 'Coffee, coffee, coffee!', effects: {stress: 25, energy: 70}},
+    { choice: 9, text: 'Straight to the labs!', effects: {stress: 50, knowledge: 45, energy: -40}},
   ],
   },
   {
   id: 8,
   description: "The coffee here tastes great, better than that utter crap you get from (insert popular coffee franchise here). Feeling freshly energised you eagerly take on the labs.",
   choices: [
-    { choice: 9, text: 'Take on the labs!', effects: {stress: 25, knowledge: 60, energy: -100}},
+    { choice: 9, text: 'Take on the labs!', effects: {stress: 25, knowledge: 60, energy: -80}},
   ],
   },
   {
   id: 9, #Kind of plain without a battle encounter
   description: "You take a look at the labs and are dismayed to see they have released 81 on the first day. How is this fair?",
   choices: [
-    { choice: 10, text: 'Sack that nonsense off and move onto lunch.', effects: {stress: -20, knowledge: -10, energy: 70}},
+    { choice: 10, text: 'Sack that nonsense off and move onto lunch.', effects: {stress: -20, knowledge: -10, energy: 75}},
   ],
   },
   {
   id: 10,
   description: "Rewarding yourself with a nice lunch after all of those labs, you've been invited to mediatate or play the campus game, Cambio",
   choices: [
-    { choice: 11, text: 'Meditate.', effects: {stress: -100, knowledge: 50, energy: 50}},
     { choice: 11, text: "I'll try out cambio!", effects: {stress: -45, knowledge: 10, energy: -15}},
+    { choice: 11, text: 'Meditate.', effects: {stress: -100, knowledge: 50, energy: 50}},
   ],
   },
   {
   id: 11,
   description: "And now, its time, for, The Evolution game! The first ice breaker. It's a rock paper scissor game where you go from egg->chicken->dinosaur->wizard. You all start as an egg, and have to seek out people at the same stage as you and challenge them to a game. If you win you evolve, if not, you join them. The game starts and you eagerly seek out an oppenent. Which do you pick?",
   choices: [
-    { choice: 12, text: "Rock", effects: {energy: 5, knowledge: 10}},
     { choice: 15, text: "Paper", effects: {energy: 0}},
+    { choice: 12, text: "Rock", effects: {energy: 5, knowledge: 10}},
     { choice: 12, text: "Scissors", effects: {energy: 5, knowledge: 10}},
   ],
   },
@@ -100,41 +100,41 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   id: 12,
   description: "Cuckity cluck! You win the first round and have evolved to a chicken and gained a supporter. You search for another chicken and comence battle!",
   choices: [
-    { choice: 15, text: "Rock", effects: {energy: 5, knowledge: 20}},
+    { choice: 13, text: "Scissors", effects: {energy: 15, knowledge: 20}},
+    { choice: 15, text: "Rock", effects: {energy: 15, knowledge: 20}},
     { choice: 13, text: "Paper", effects: {energy: 0}},
-    { choice: 13, text: "Scissors", effects: {energy: 5, knowledge: 20}},
   ],
   },
   {
   id: 13,
   description: "You win the second round! You now have 3 supporter's and have evolved to a dinosaur. Feeling pumped you move onto your last opponent, with your squad cheering you on.",
   choices: [
-    { choice: 14, text: "Rock", effects: {energy: 25, knowledge: 50}},
-    { choice: 15, text: "Paper", effects: {energy: 0}},
+    { choice: 14, text: "Rock", effects: {energy: 35, knowledge: 50}},
     { choice: 15, text: "Scissors", effects: {energy: 0}},
+    { choice: 15, text: "Paper", effects: {energy: 0}},
   ],
   },
   {
   id: 14,
   description: "You've won the last and final round! You've become a very knowledgeable Wizard. You celebrate with your team and then head home." ,
   choices: [
-    { choice: 51, text: "I'm a what?", effects: {energy: 5, knowledge: 20}},
+    { choice: 51, text: "I'm a what?", effects: {energy: 5, knowledge: 10}},
   ],
   },
   {
   id: 15,
   description: "You've been beaten in a game of pure skill. How did you make such a terrible mistake. You join your oppenent and watch out the remainder of the tournament." ,
   choices: [
-    { choice: 51, text: "Fatality", effects: {energy: 5, knowledge: 20}},
+    { choice: 51, text: "Fatality", effects: {stress: 40, knowledge: 0}},
   ],
   },
   {
   id: 51, #Start day 2
   description: "OH SHIT! It's 7.30! You're late!!",
   choices: [
-    { choice: 53, text: 'Run Forrest, run!', effects: {stress: 50, energy: -85}},
+    { choice: 53, text: 'Run Forrest, run!', effects: {stress: 50, energy: -75}},
     { choice: 52, text: "Oh what the hell. It's too late anyway. Might as well relax
-                         and have a boiled egg.", effects: {stress: -10, energy: 30}},
+                         and have a boiled egg.", effects: {stress: -10, energy: 40}},
   ],
   },
   {
@@ -142,7 +142,7 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "Of course, you're late and Nico has started his lecture. At the speed he goes, you've probably missed a hell of a lot of knowledge.",
   choices: [
     { choice: 54, text: 'I can totally sneak in unnoticed...', effects: {stress: 15}},
-    { choice: 55, text: "It's too late now. I'm going for the buscuit jar.", effects: {stress: -20, knowledge: -10, energy: 20}},
+    { choice: 55, text: "It's too late now. I'm going for the biscuit jar.", effects: {stress: -20, knowledge: -10, energy: 20}},
   ],
 
   },
@@ -212,7 +212,6 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   description: "You look inside the pods but all the doors are open and no ones inside, excpet....the one at the back seems to be glowing and the door is closed...",
   choices: [
     { choice: 62, text: "Woah... I'm kinda scared but lets check it out.", effects: {stress: 45}},
-    { choice: 62, text: "Oh heell no! I'll just wait here, uh, till shes done...I guess.", effects: {stress: -20}},
   ],
   },
   {
@@ -312,10 +311,17 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   id: 72,
   description: "Home sweet home. You get into bed and passout instantly...enjoy those coding dreams mwahahaha!",
   choices: [
-    { choice: 100, text: 'Tomorrow, tomorrow, I love yaa tomorrow zzzz', effects: {stress: -100, knowledge: 45, energy: 100}},
-  ]
+    { choice: 100, text: 'Tomorrow, tomorrow, I love ya tomorrow.', effects: {stress: -100, knowledge: 45, energy: 100}},
+  ],
   },
-  { #Start day 3
+  {
+  # id: 73,
+  # description: "Just one moment, before you go home, remember how in American high school movies the teacher would randomly call out the dreadedphrase 'Pop Quiz!'? Well, Surprise! You have a Pop Code Challenge. But there's a catch, you can only take part if you have the following stats Knowledge: 300.",
+  # choices: [
+  #   { choice: 100, text: 'Try to pass the test'}
+  # ],
+  # },
+  # {
   id: 100,
   description: "You wake up refreshed and head into school. You eagerly get to work, its going smoothly. You notice someone keeps playing youtube videos out loud. How do you want to adress this?",
   choices: [
@@ -650,6 +656,13 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   ],
   },
   {
+  id: 351,
+  description: "You have secured a job as a software engineer. Life goals complete, endless riches will soon be yours.",
+  choices: [
+    { choice: 170, text: 'Ultimate win!', effects: {stress: -100, knowledge: 100, energy: 100}},
+  ],
+  },
+  {
   id: 400,
   description: "You've run out of energy, you collapse to the floor and die :( ",
   choices: [
@@ -663,11 +676,13 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
   def create_user
     pastel = Pastel.new
     titlefont = TTY::Font.new(:doom)
-    puts pastel.red(titlefont.write("Flatiron Simulator"))
-    puts pastel.red(titlefont.write("Extreme Edition"))
-    puts pastel.red(titlefont.write("NEW GAME"))
+    puts Rainbow(titlefont.write("Flatiron Simulator")).color("36d0d8").bright
+    puts Rainbow(titlefont.write("Extreme Edition")).color(:mediumslateblue).bright
+    puts Rainbow("NEW GAME").color("36d0d8").bright
+    puts "                  "
     puts Rainbow("Welcome to Flatiron Simulator, Extreme Edition:").color(:mediumslateblue).bright
     name = @prompt.ask("What's your name?")
+
 
     if name == nil
       puts "Please enter a valid name to continue"
@@ -687,8 +702,8 @@ attr_accessor :user, :story, :current_scenario, :energy, :stress, :knowledge
       return "GG"
     end
 
-    # if @current_scenario == @story.find { |scenario| scenario[:id] == 5 } && @user.knowledge <= 50
-    #   @current_scenario = @story.find { |scenario| scenario[:id] == 360}
+    # if @current_scenario == @story.find { |scenario| scenario[:id] == 5 } && @user.knowledge <= 300
+    #    @current_scenario = @story.find { |scenario| scenario[:id] == 360}
     # end
 
     puts "                              "
